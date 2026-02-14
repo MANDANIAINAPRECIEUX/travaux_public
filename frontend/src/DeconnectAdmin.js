@@ -30,7 +30,7 @@ const Deconnexion = () => {
                     Êtes-vous sûr de vouloir vous déconnecter ?
                 </p>
                 <button className="logout-button" onClick={handleLogout}>
-                    Oui, me déconnecter
+                    Oui bien sur , je veux me déconnecter
                 </button>
             </div>
         </div>
