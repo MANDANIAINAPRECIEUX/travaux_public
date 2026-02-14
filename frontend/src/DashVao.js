@@ -97,7 +97,7 @@ const Diagnostics = () => {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#297bc7',
-      cancelButtonColor: '#d33',
+      cancelButtonColor: 'rgb(154, 22, 22)',
       confirmButtonText: 'Oui, supprimer!',
     }).then(async (result) => {
       if (result.isConfirmed) {
