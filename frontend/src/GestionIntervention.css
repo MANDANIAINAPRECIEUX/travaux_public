@@ -1,0 +1,81 @@
+.table-container {
+    padding: 20px;
+}
+
+.table-actions {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-button {
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-button .faEdit, .icon-button .faTrash {
+    font-size: 16px;
+}
+
+.form-container {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-button, .cancel-button {
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cancel-button {
+    background-color: grey;
+}
+

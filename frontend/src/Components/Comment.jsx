@@ -5,7 +5,7 @@ const Comment = () => {
 
     return (
         <div>
-           <h1>Comment</h1>
+           <h1>Comment OHIUOH3AGIRHGORGHO</h1>
         </div>
     )
 }

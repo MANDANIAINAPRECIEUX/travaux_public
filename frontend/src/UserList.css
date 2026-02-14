@@ -1,0 +1,21 @@
+/* src/components/UserList.css */
+.user-list {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.user-list h2 {
+    text-align: center;
+    color: #333;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}

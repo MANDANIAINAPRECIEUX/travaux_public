@@ -1,54 +1,118 @@
-
-
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-}
-
-.container{
-  display: flex;
-}
-main {
-  width: 100%;
-  padding: 20px;
-}
-.sidebar {
-  background-color: black;
-  color: white;
-  height: 100vh;
-  width: 300px;
-  transition: all 0.5s;
-}
-.top_section {
-  display: flex;
-  align-items: center;
-  padding: 20px 15px;
-}
-.logo {
-  font-size: 30px;
-}
-.bars {
-  display: flex;
-  font-size: 25px;
-  margin-left: 50px;
-}
+/* Liens par défaut */
 .link {
   display: flex;
   color: #fff;
   padding: 10px 15px;
   gap: 15px;
-  transition: all 0.5s;
+  transition: background-color 0.5s, color 0.5s;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+/* Survol des liens */
+/* Conteneur principal */
+
+
+/* Styles de la barre latérale */
+
+
+
+
+/* Pour s'adapter au mode compact de la sidebar */
+.sidebar.collapsed + .main-content {
+  margin-left: 80px;
+}
+
+/* Styles des liens dans la barre latérale */
+.link {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
 .link:hover {
-  background-color: lightskyblue;
-  color: #000;
-  transition: all 0.5s;
+  background-color: #444;
 }
+
+.link .icon {
+  margin-right: 15px;
+}
+
+.link_text {
+  font-size: 14px;
+}
+
+
+
+.top_section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+/* Lien actif */
 .active {
-  background-color: lightskyblue;
-  color: #000;
+  background-color: darkred;
+  color: white;
 }
-.icon, .link_text {
-  font-size: 20px;
+
+
+/* Sidebar (ouvert) */
+.sidebar {
+  background-color: #228B22;
+  color: white;
+  height: 100vh;
+  width: 250px;
+  transition: width 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1rem;
+  min-height: 100vh;
+  padding-top: 20px; 
 }
+
+/* Sidebar (fermé) */
+.sidebar.collapsed {
+  width: 80px;
+}
+.main-content {
+  margin-left: 250px;         /* Déplace le contenu principal pour qu'il ne soit pas caché sous le sidebar */
+  padding: 20px;
+  transition: margin-left 0.5s, width 0.5s;
+  width: 100%;
+}  
+
+/* Contenu principal avec sidebar ouvert */
+
+/* Contenu principal avec sidebar fermé */
+.main-content.collapsed {
+  margin-left: 50px;
+  width: calc(100% - 50px);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centre l'image horizontalement */
+  align-items: center; /* Centre l'image verticalement */
+  margin-bottom: 20px; /* Ajoute un espacement en dessous du logo */
+}
+
+.logo {
+  width: 100px; /* Nouvelle largeur de l'image */
+  height: 100px; /* Nouvelle hauteur de l'image */
+  border-radius: 50%; /* Donne une forme ronde à l'image */
+  object-fit: cover; /* Ajuste le contenu de l'image pour qu'elle ne soit pas déformée */
+  border: 2px solid lightskyblue; /* Optionnel : ajoute une bordure autour de l'image */
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+

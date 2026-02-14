@@ -1,9 +1,9 @@
 .wrapper {
     position: relative;
     width:420px; 
-    height:500px;
-    background-color: white;
-    border: 3px dashed darkred;
+    height:570px;
+    background-color: transparent;
+    border: 1px dashed  #DC143C;
     backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
@@ -31,7 +31,7 @@
     height: 520px;
 }
 .wrapper:hover {
-    border: 3px dashed darkgreen;
+    border: 1px dashed darkgreen;
 }
 
 .wrapper .form-box {
@@ -78,7 +78,7 @@ form .input-box {
     background-color: transparent;
     border: none;
     outline: none;
-    border: 2px solid darkred;
+    border: 2px solid  #DC143C;
     border-radius: 40px;
     font-size: 16px;
     color: black;
@@ -139,7 +139,7 @@ form .register-link {
 }
 
 .register-link p a {
-    color: darkred;
+    color:  #DC143C;
     text-decoration: none;
     font-weight: 600;
     text-decoration: underline;
@@ -156,6 +156,16 @@ form .register-link {
 h2{
     text-align: center;
 }
+.h{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color:  #DC143C;
+}
+.hi{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #DC143C;
+}
 .phraseMot{
     color: black;
     text-decoration: underline;
@@ -163,17 +173,45 @@ h2{
 
 
 .global {
-    font-family: "Poppins", sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   display:flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-size: cover;
+  background-image: url('./Assets/yo.jpg');
   background-position: center;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
+  .go-to-admin {
+    position: fixed;
+    top: 20px; /* Ajuste la position verticale */
+    right: 20px; /* Positionner à droite */
+    z-index: 10; /* S'assurer que le bouton est visible par-dessus le reste de la page */
+}
+
+/* Style du bouton pour l'admin */
+.admin-dashboard-btn {
+    background-color:  #DC143C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.admin-dashboard-btn:hover {
+    background-color: darkred;
+}
+/* Pour ajouter une flèche ou une icône à droite du select */
+
   

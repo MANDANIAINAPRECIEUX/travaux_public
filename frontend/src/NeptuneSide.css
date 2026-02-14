@@ -1,0 +1,48 @@
+/* Sidebar.css */
+.sidebar-Nep {
+    width: 250px; /* Largeur de la sidebar */
+    background-color: #2c3e50; /* Couleur de fond */
+    color: #ecf0f1; /* Couleur du texte */
+    padding: 20px; /* Espacement interne */
+    position: fixed; /* Fixe la sidebar sur le côté */
+    height: 100%; /* Hauteur de la sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+    transition: all 0.3s ease; /* Transition douce pour les effets */
+  }
+  
+  .sidebar-title {
+    text-align: center; /* Centrer le titre */
+    margin-bottom: 20px; /* Espacement en bas du titre */
+  }
+  
+  .sidebar-menu {
+    list-style-type: none; /* Retire les puces des listes */
+    padding: 0; /* Retire le padding */
+  }
+  
+  .sidebar-menu li {
+    margin: 15px 0; /* Espacement entre les éléments */
+  }
+  
+  .sidebar-link {
+    text-decoration: none; /* Retire le soulignement */
+    color: #ecf0f1; /* Couleur du texte */
+    display: block; /* Permet de cliquer sur toute la zone */
+    padding: 10px 15px; /* Espacement interne */
+    border-radius: 5px; /* Arrondir les coins */
+    transition: background 0.3s, color 0.3s; /* Transition pour le survol */
+  }
+  
+  .sidebar-link:hover {
+    background-color: #34495e; /* Couleur de fond au survol */
+    color: #ffffff; /* Changer la couleur du texte au survol */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%; /* La sidebar occupe toute la largeur sur mobile */
+      height: auto; /* Ajuste la hauteur pour mobile */
+    }
+  }
+  

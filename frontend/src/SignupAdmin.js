@@ -8,7 +8,7 @@ import { BsPersonPlusFill } from "react-icons/bs";
 import mtpi from './Assets/mtpi.jpg'; // Remplacez par le chemin de votre image
 import Swal from 'sweetalert2'; // Import de SweetAlert2
 
-function Signup() {
+function SignupAdmin() {
     const [values, setValues] = useState({
         nom: '',
         role: '',
@@ -30,7 +30,7 @@ function Signup() {
 
         if (Object.keys(validationErrors).length === 0) {
             console.log(values);
-            axios.post('http://localhost:8081/signup', values)
+            axios.post('http://localhost:8081/admin', values)
                 .then(res => {
                     console.log(res.data);
                     Swal.fire({ // Sweet Alert pour succès
@@ -39,7 +39,7 @@ function Signup() {
                         text: 'Vous avez été inscrit avec succès!',
                         confirmButtonText: 'OK'
                     }).then(() => {
-                        navigate('/'); // Redirection après la confirmation de l'alerte
+                        navigate('/admin'); // Redirection après la confirmation de l'alerte
                     });
                 })
                 .catch(err => {
@@ -66,7 +66,7 @@ function Signup() {
                             style={{ width: '120px', height: '120px', margin: '0 auto' }}
                         />
                     </center>
-                    <h2 className="hi">S'inscrire</h2>
+                    <h2 className="hi">S'inscrire(Admin)</h2>
                     <form onSubmit={handleSubmit}>
                         <div className='input-box'>
                             <input
@@ -117,7 +117,7 @@ function Signup() {
                         </div>
                         <button type="submit"> S'inscrire </button>
                         <div className='register-link'>
-                            <p>Avez-vous déjà un compte? <a href="/"> Se connecter</a></p>
+                            <p>Avez-vous déjà un compte? <a href="/admin"> Se connecter</a></p>
                         </div>
                     </form>
                 </div>
@@ -126,4 +126,4 @@ function Signup() {
     );
 }
 
-export default Signup;
+export default SignupAdmin;

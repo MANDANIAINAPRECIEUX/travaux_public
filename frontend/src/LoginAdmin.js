@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import './LoginForm.css';
+import './LoginForm.css'; // Utiliser le même fichier CSS pour garder le même style
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaLock, FaEnvelope } from "react-icons/fa";
 import mtpi from './Assets/mtpi.jpg';
 
-function LoginForm() {
+function LoginAdmin() {
     const [values, setValues] = useState({
         email: '',
         motdepasse: ''
@@ -20,16 +20,16 @@ function LoginForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8081/login", { email: values.email, motdepasse: values.motdepasse })
-            .then((res) => {
-                console.log(res.data);
-                // Vérifiez le rôle de l'utilisateur et redirigez en conséquence
-                if (res.data.email === 'admin@gmail.com') {
-                    navigate("/user"); // Redirigez l'admin vers la page des utilisateurs
-                } else {
-                    navigate("/graphe"); // Autres utilisateurs redirigés vers le tableau de bord
-                }
-            })
+        axios.post("http://localhost:8081/admins", { email: values.email, motdepasse: values.motdepasse })
+        .then((res) => {
+            console.log(res.data);
+            // Vérifiez le rôle de l'utilisateur et redirigez en conséquence
+            if (res.data.email === 'admin@gmail.com') {
+                navigate("/dashboardadmin"); // Redirigez l'admin vers la page des utilisateurs
+            } else {
+                navigate("/dashboardadmin"); // Autres utilisateurs redirigés vers le tableau de bord
+            }
+        })
             .catch((err) => {
                 if (err.response && err.response.status === 401) {
                     setErrors({ motdepasse: 'Mot de passe incorrect' });
@@ -45,7 +45,7 @@ function LoginForm() {
     };
 
     const handleGoToDashboardAdmin = () => {
-        navigate("/admin"); // Redirige vers la page DashboardAdmin
+        navigate("/"); // Redirige vers la page DashboardAdmin
     };
 
     return (
@@ -53,10 +53,9 @@ function LoginForm() {
                         {/* Bouton en haut à droite */}
             <div className="go-to-admin">
                 <button className="admin-dashboard-btn" onClick={handleGoToDashboardAdmin}>
-                    Accéder au compte admininstrateur
+                    Accéder compte utilisateur
                 </button>
             </div>
-
             <div className='wrapper'>
                 <div className='form-box login'>
                     <center>
@@ -67,7 +66,7 @@ function LoginForm() {
                             style={{ width: '150px', height: '150px', margin: '0 auto' }}
                         />
                     </center>
-                    <h2 className="h">Se Connecter</h2>
+                    <h2 className="h">Se Connecter (Admin)</h2>
                     <form onSubmit={handleSubmit}>
                         <div className='input-box'>
                             <input
@@ -102,11 +101,11 @@ function LoginForm() {
                             {errors.motdepasse && <span className="text-danger">{errors.motdepasse}</span>}
                         </div>
                         <button type="submit">Se connecter</button>
-                        <p className="phraseMot" onClick={handleForgotPassword} style={{ cursor: 'pointer', textAlign: 'center' }}>
+                        <p className="phraseMot" onClick={handleForgotPassword} style={{ cursor: 'pointer', textAlign: 'center' }} >
                             Mot de passe oublié ?
                         </p>
                         <div className='register-link'>
-                            <p>Vous n'avez pas de compte? <a href="/SignUp" > Créer un compte</a></p>
+                            <p>Vous n'avez pas de compte? <a href="/SignAdmin" > Créer un compte</a></p>
                         </div>
                     </form>
                 </div>
@@ -115,4 +114,4 @@ function LoginForm() {
     );
 }
 
-export default LoginForm;
+export default LoginAdmin;
