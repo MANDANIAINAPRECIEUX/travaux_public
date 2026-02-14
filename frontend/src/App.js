@@ -33,7 +33,6 @@ function App() {
       <Route path="/productsList" element={<ProductsList />} />
       <Route path="/about" element={<About />} />
       <Route path="/analytics" element={<Analytics />} />
-      <Route path="/sidehtml" element={<SideHtml />} />
       </Routes>
       </BrowserRouter>
     </div>
